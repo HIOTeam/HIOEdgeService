@@ -24,12 +24,7 @@ namespace Edge
         public static string PATHMSGREC = @".\Private$\MSGHIO1Edge" + System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last();
         public static string PATHMSGSEND = @".\Private$\MSGHIO2" + System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last();
         public static string BROWSER = "Edge";
-        //**************************************************
-        // Provides an entry point into the application.
-        //		 
-        // This example sends and receives a message from
-        // a queue.
-        //**************************************************
+     
 
         private static AutoResetEvent _signal = new AutoResetEvent(false);
         private static AutoResetEvent _signalRec = new AutoResetEvent(false);
@@ -51,7 +46,7 @@ namespace Edge
         [STAThread]
         static void Main(string[] args)
         {
-            //  MessageBox.Show("");
+    
 
             Process currentProcess = Process.GetCurrentProcess();
             killProcess("Edge", currentProcess.Id);
@@ -133,7 +128,7 @@ namespace Edge
         /// </summary>
         private static void Connection_RequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
         {
-           // MessageBox.Show("test");
+          
             // Create a new order and set values.
             SendData sentOrder = new SendData();
             sentOrder.label = BROWSER; //set header
